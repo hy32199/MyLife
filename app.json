@@ -1,0 +1,11 @@
+
+{
+  "expo": {
+    "name": "MyLife",
+    "slug": "mylife",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true
+  }
+}
