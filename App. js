@@ -1,0 +1,156 @@
+
+import React from 'react';
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  StatusBar,
+} from 'react-native';
+
+const sections = [
+  {
+    title: '💰 Money',
+    subtitle: 'Track your income and expenses',
+  },
+  {
+    title: '📅 My Day',
+    subtitle: 'Organize your daily routine',
+  },
+  {
+    title: '🎯 Goals',
+    subtitle: 'Plan your future and track progress',
+  },
+  {
+    title: '📝 Notes',
+    subtitle: 'Save your ideas and important notes',
+  },
+  {
+    title: '⭐ Today’s Focus',
+    subtitle: 'Focus on what matters most today',
+  },
+];
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text style={styles.greeting}>MY LIFE</Text>
+        <Text style={styles.heading}>Build your best life.</Text>
+        <Text style={styles.description}>
+          Your life, organized in one place.
+        </Text>
+
+        <View style={styles.focusCard}>
+          <Text style={styles.focusTitle}>
+            ⭐ TODAY'S FOCUS
+          </Text>
+          <Text style={styles.focusText}>
+            Small steps. Big progress.
+          </Text>
+        </View>
+
+        <Text style={styles.sectionHeading}>
+          My Workspace
+        </Text>
+
+        {sections.map((section) => (
+          <View key={section.title} style={styles.card}>
+            <Text style={styles.cardTitle}>
+              {section.title}
+            </Text>
+            <Text style={styles.cardSubtitle}>
+              {section.subtitle}
+            </Text>
+          </View>
+        ))}
+
+        <Text style={styles.footer}>
+          MY LIFE • YOUR PERSONAL SPACE
+        </Text>
+      </ScrollView>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5F7FB',
+    paddingTop: 55,
+  },
+  greeting: {
+    fontSize: 13,
+    fontWeight: '800',
+    letterSpacing: 3,
+    color: '#5267D9',
+    marginHorizontal: 22,
+  },
+  heading: {
+    fontSize: 29,
+    fontWeight: '800',
+    color: '#18213B',
+    marginTop: 12,
+    marginHorizontal: 22,
+  },
+  description: {
+    fontSize: 14,
+    color: '#70788C',
+    marginTop: 8,
+    marginHorizontal: 22,
+  },
+  focusCard: {
+    backgroundColor: '#5267D9',
+    margin: 20,
+    marginTop: 25,
+    padding: 22,
+    borderRadius: 20,
+  },
+  focusTitle: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  focusText: {
+    color: '#FFFFFF',
+    fontSize: 19,
+    fontWeight: '700',
+    marginTop: 12,
+  },
+  sectionHeading: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: '#18213B',
+    marginHorizontal: 22,
+    marginBottom: 12,
+  },
+  card: {
+    backgroundColor: '#FFFFFF',
+    marginHorizontal: 20,
+    marginBottom: 12,
+    padding: 18,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: '#E9ECF4',
+  },
+  cardTitle: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#18213B',
+  },
+  cardSubtitle: {
+    fontSize: 13,
+    color: '#70788C',
+    marginTop: 7,
+  },
+  footer: {
+    textAlign: 'center',
+    fontSize: 10,
+    color: '#8A91A3',
+    marginTop: 18,
+    marginBottom: 35,
+    letterSpacing: 1,
+  },
+});
